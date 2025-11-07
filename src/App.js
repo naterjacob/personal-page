@@ -7,55 +7,84 @@ const TAB_CONFIG = [
   { id: 'resume', label: 'Resume' },
 ];
 
+const CONTACT_LINKS = [
+  {
+    label: 'Email',
+    value: 'jnater@salmon.net',
+    href: 'mailto:jnater@salmon.net',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/jnater',
+    href: 'https://www.linkedin.com/in/jnater',
+  },
+  {
+    label: 'Phone',
+    value: '(408) 464-6915',
+    href: 'tel:+14084646915',
+  },
+  {
+    label: 'Location',
+    value: 'San Luis Obispo, CA',
+  },
+];
+
 const PROJECT_CATEGORIES = [
   {
-    id: 'client',
-    title: 'Client Partnerships',
-    description: 'High-impact builds delivered for startups and internal innovation teams.',
+    id: 'cloud',
+    title: 'Cloud + Platform Builds',
+    description:
+      'High-volume, customer-facing systems spanning AWS data lakes, caching layers, and reporting UX.',
     projects: [
       {
-        name: 'Nova Wealth',
-        summary: 'Crafted a modern client portal with analytics, advisory workflows, and a modular component system.',
-        stack: 'React, TypeScript, Node, AWS',
+        name: 'Publisher Insights Platform',
+        summary:
+          'Own the SDLC for a data lake that tracks 100M+ objects with ~1M daily changes powering enterprise payments.',
+        stack: 'SQS · AWS Glue · S3 · Lambda · Firehose',
       },
       {
-        name: 'Pulse Logistics',
-        summary: 'Launched a dispatch intelligence dashboard that improved fleet utilization by 18% within one quarter.',
-        stack: 'Next.js, D3, WebSockets',
+        name: 'Payment Reporting UI',
+        summary:
+          'Partnered with PMs and customers to ship a modern UI adopted by 10K+ publishers generating $20M+ in sales.',
+        stack: 'React · TypeScript · DynamoDB',
       },
     ],
   },
   {
-    id: 'personal',
-    title: 'Product Experiments',
-    description: 'Independent explorations that sharpen my craft and test new ideas.',
+    id: 'embedded',
+    title: 'Embedded & FPGA Systems',
+    description: 'Low-level builds that blend firmware, digital design, and hardware debugging.',
     projects: [
       {
-        name: 'Forma Studio',
-        summary: 'A design system starter with accessible foundations, theming, and documentation baked in.',
-        stack: 'Storybook, Styled Components, Vite',
+        name: 'Arcade on STM32',
+        summary:
+          'Implemented the NEC infrared protocol plus UART to deliver host/client arcade gameplay and Snake on bare metal.',
+        stack: 'STM32 · C · UART · NEC IR',
       },
       {
-        name: 'Runway Notes',
-        summary: 'Lightweight research tracker for teams to align insights with OKRs and milestones.',
-        stack: 'Vue, Supabase, Tailwind',
+        name: 'Pipelined RISC-V CPU',
+        summary:
+          'Five-stage pipeline with hazard mitigation, set-associative cache, and ultrasonic sensor I/O on FPGA.',
+        stack: 'SystemVerilog · Vivado · RISC-V',
       },
     ],
   },
   {
-    id: 'lab',
-    title: 'R&D / Labs',
-    description: 'Deep dives into emerging tech to keep me curious and sharp.',
+    id: 'ai',
+    title: 'AI + Research Experiments',
+    description: 'Applied ML research to gameplay systems and automated difficulty balancing.',
     projects: [
       {
-        name: 'Cortex',
-        summary: 'Prototype interface for orchestrating multi-LLM agents around design deliverables.',
-        stack: 'React, LangChain, FastAPI',
+        name: 'Generative Level Builder',
+        summary:
+          'Used pretrained generative models to create multi-tier level layouts with tunable difficulty knobs.',
+        stack: 'Python · PyTorch · AWS',
       },
       {
-        name: 'Horizon HUD',
-        summary: 'Gesture-driven AR heads-up display exploration, focused on low-latency telemetry.',
-        stack: 'Unity, C#, Azure Spatial Anchors',
+        name: 'Difficulty Balancer',
+        summary:
+          'Designed scoring algorithms to keep five difficulty tiers consistent across player journeys.',
+        stack: 'Python · Data Viz · Analytics',
       },
     ],
   },
@@ -63,61 +92,80 @@ const PROJECT_CATEGORIES = [
 
 const EXPERIENCE = [
   {
-    company: 'Northwind Studio',
-    role: 'Lead Product Engineer',
-    timeframe: '2021 — Present',
+    company: 'Amazon',
+    role: 'Junior Software Development Engineer III',
+    timeframe: 'Jan 2025 – Present',
+    location: 'San Luis Obispo, CA',
     impact: [
-      'Scaled design system used across 12 product squads.',
-      'Partnered with research + strategy to ship two 0→1 products in 9 months.',
+      'Designed a high-volume data lake tracking 100M objects and ~1M daily changes using SQS, Glue, Firehose, and Lambda.',
+      'Implemented a DynamoDB caching layer that eased load on authentication services and boosted throughput.',
+      'Co-created a payment-reporting UI for 10K+ enterprise publishers generating $20M+ in sales.',
     ],
   },
   {
-    company: 'Fieldline Labs',
-    role: 'Senior Front-End Engineer',
-    timeframe: '2018 — 2021',
+    company: 'Cal Poly, CPE 333 & EE 215',
+    role: 'Teaching Assistant',
+    timeframe: 'Jan 2025 – Present',
+    location: 'San Luis Obispo, CA',
     impact: [
-      'Introduced performance budgets that reduced bundle size by 42%.',
-      'Led accessibility initiative achieving WCAG 2.1 AA compliance.',
+      'Mentored students building a five-stage RISC-V pipeline with hazard protection and caches in Vivado.',
+      'Developed RISC-V test programs and labs covering dynamic circuit analysis, Laplace transforms, and filter design.',
     ],
   },
   {
-    company: 'Freelance',
-    role: 'Product Designer & Developer',
-    timeframe: '2014 — 2018',
+    company: 'Ongawa',
+    role: 'AI Development Intern',
+    timeframe: 'Sep 2024 – Dec 2024',
+    location: 'San Luis Obispo, CA',
     impact: [
-      'Delivered 25+ bespoke sites / apps for early-stage founders.',
-      'Built repeatable discovery and delivery playbooks for cross-discipline teams.',
+      'Applied modern AI research and pretrained models to automate game-level generation.',
+      'Delivered algorithms that generate five tuned difficulty tiers for granular player control.',
     ],
   },
 ];
 
+const EDUCATION = {
+  school: 'California Polytechnic State University, San Luis Obispo',
+  degree: 'B.S. Computer Engineering, GPA 3.96',
+  timeframe: 'Sep 2021 – Jun 2026',
+  focus: 'Embedded systems, backend development, and AI applications.',
+};
+
 const SKILL_SETS = [
   {
-    title: 'Core Stack',
-    items: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'Next.js'],
+    title: 'Programming Languages',
+    items: ['Python', 'Java', 'Kotlin', 'JavaScript/TypeScript', 'C', 'SystemVerilog', 'RISC-V'],
   },
   {
-    title: 'Product Craft',
-    items: ['Design Systems', 'UX Writing', 'Rapid Prototyping', 'Accessibility'],
+    title: 'Tools & Platforms',
+    items: ['Git', 'Visual Studio', 'Bash', 'AWS Suite', 'Firebase', 'STM32CubeIDE', 'Vivado'],
   },
   {
-    title: 'Ways of Working',
-    items: ['Technical Leadership', 'Roadmapping', 'Fractional Partnerships', 'Workshops'],
+    title: 'Hardware & Protocols',
+    items: [
+      'STM32 & Arduino',
+      'Oscilloscope',
+      'Digital Multimeter',
+      'DC & AC Power Supplies',
+      'Waveform Generator',
+      'FPGAs',
+      'UART · I²C · SPI',
+    ],
   },
 ];
 
 const PRINCIPLES = [
   {
-    title: 'Build with clarity',
-    detail: 'Every pixel, component, and line of copy earns its place by supporting the outcome.',
+    title: 'Percussion Captionhead',
+    detail: 'Arranging, leading, and coordinating the percussion package for Templeton High School Marching Band.',
   },
   {
-    title: 'Prototype early',
-    detail: 'Ideas land faster when users can click, swipe, or tap through the experience.',
+    title: 'Visual Captionhead',
+    detail: 'Designing and teaching drill and movement for Templeton High School Marching Band.',
   },
   {
-    title: 'Measure what matters',
-    detail: 'Pair qualitative research with the right metrics to keep teams honest and inspired.',
+    title: 'Competitive Excellence',
+    detail: 'Fostering a culture of high achievement and continuous improvement within the ensemble. Creative design and execution to drive ensembles to success.',
   },
 ];
 
@@ -127,30 +175,22 @@ function App() {
   const renderAbout = () => (
     <div className="about-grid">
       <div className="card depth">
-        <p className="eyebrow">About Me</p>
-        <h2>Fractional product partner turning bold ideas into polished launches.</h2>
+        <p className="eyebrow">About Jacob</p>
+        <h2>Computer Engineering student building dependable backend, embedded, and AI systems.</h2>
         <p>
-          I blend product strategy, UX design, and front-end engineering to help modern teams move
-          from pitch decks to shipped experiences. I focus on clarity, inclusive interactions, and
-          thoughtful systems that scale.
+        Computer Engineering student with strong experience in backend development, embedded systems,
+         and AI applications. Proven success in building scalable Amazon data solutions, high-performance
+         FPGA projects, and leading technical projects on customer-facing platforms.
         </p>
         <div className="stats-row">
           <div>
-            <span className="stat-value">12+</span>
-            <span className="stat-label">Years shipping</span>
-          </div>
-          <div>
-            <span className="stat-value">30</span>
-            <span className="stat-label">Teams partnered</span>
-          </div>
-          <div>
-            <span className="stat-value">5</span>
-            <span className="stat-label">Design systems</span>
+            <span className="stat-value">3.96</span>
+            <span className="stat-label">Cal Poly GPA</span>
           </div>
         </div>
       </div>
       <div className="card principles">
-        <p className="eyebrow">Guiding Principles</p>
+        <p className="eyebrow">Performing Arts</p>
         <ul>
           {PRINCIPLES.map((principle) => (
             <li key={principle.title}>
@@ -162,13 +202,13 @@ function App() {
       </div>
       <div className="card availability">
         <p className="eyebrow">Availability</p>
-        <h3>Currently booking projects for Q3</h3>
+        <h3>Open to summer internships and select freelance builds.</h3>
         <p>
-          Ideal for founders, product orgs, or agencies that need a senior hand leading 0→1 builds or
-          leveling up existing experiences.
+          Ideal fit for teams tackling data-intensive AWS workloads, embedded prototyping, or AI tooling for creative
+          pipelines.
         </p>
-        <a className="primary-link" href="mailto:hello@studiojane.com">
-          Let&apos;s Collaborate
+        <a className="primary-link" href="mailto:jnater@salmon.net">
+          Contact Jacob
         </a>
       </div>
     </div>
@@ -204,15 +244,15 @@ function App() {
         <div className="resume-header">
           <div>
             <p className="eyebrow">Experience Snapshot</p>
-            <h2>Partnering end-to-end from discovery to launch.</h2>
+            <h2>Pairing AWS-scale services with hands-on hardware teaching.</h2>
           </div>
-          <a className="secondary-button" href="https://example.com/resume.pdf" target="_blank" rel="noreferrer">
-            Download PDF
+          <a className="secondary-button" href="https://www.linkedin.com/in/jnater" target="_blank" rel="noreferrer">
+            View LinkedIn
           </a>
         </div>
         <div className="timeline">
           {EXPERIENCE.map((role) => (
-            <article key={role.company} className="timeline-item">
+            <article key={`${role.company}-${role.role}`} className="timeline-item">
               <div>
                 <h3>{role.role}</h3>
                 <span>{role.company}</span>
@@ -225,6 +265,14 @@ function App() {
               </ul>
             </article>
           ))}
+        </div>
+        <div className="education-callout">
+          <p className="eyebrow">Education</p>
+          <h3>{EDUCATION.school}</h3>
+          <p>
+            {EDUCATION.degree} · {EDUCATION.timeframe}
+          </p>
+          <p className="text-muted">Focus: {EDUCATION.focus}</p>
         </div>
       </section>
       <section className="card skills-card">
@@ -242,10 +290,10 @@ function App() {
           ))}
         </div>
         <div className="cta-panel">
-          <h3>Need a product partner?</h3>
-          <p>Happy to chat about fractional roles, advisory, or quick discovery sprints.</p>
-          <a className="primary-link" href="https://cal.com">
-            Schedule Intro
+          <h3>Let&apos;s collaborate</h3>
+          <p>Available for internships, research collaborations, and prototyping engagements.</p>
+          <a className="primary-link" href="mailto:jnater@salmon.net">
+            Email Jacob
           </a>
         </div>
       </section>
@@ -268,31 +316,55 @@ function App() {
     <div className="app-shell">
       <header className="hero card depth">
         <div>
-          <p className="eyebrow">Product Designer × Front-End Engineer</p>
-          <h1>Hi, I&apos;m Jane Taylor.</h1>
+          <p className="eyebrow">Computer Engineering · Backend · Embedded · AI</p>
+          <h1>Hi, I&apos;m Jacob Nater.</h1>
           <p className="lead">
-            I help lean teams design, build, and launch premium digital products with the polish of
-            an in-house crew.
+            Computer Engineering student with hands-on AWS, embedded, and AI experience. I build scalable data systems,
+            architect five-stage RISC-V pipelines, and mentor teams shipping production-ready experiences.
           </p>
           <div className="hero-actions">
-            <a className="primary-link" href="mailto:hello@studiojane.com">
-              Start a Project
+            <a className="primary-link" href="mailto:jnater@salmon.net">
+              Get in Touch
             </a>
-            <a className="ghost-link" href="https://www.linkedin.com">
+            <a className="ghost-link" href="https://www.linkedin.com/in/jnater" target="_blank" rel="noreferrer">
               LinkedIn
             </a>
+          </div>
+          <div className="contact-row">
+            {CONTACT_LINKS.map((contact) =>
+              contact.href ? (
+                <a
+                  key={contact.label}
+                  className="contact-chip"
+                  href={contact.href}
+                  target={contact.href.startsWith('http') ? '_blank' : undefined}
+                  rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
+                >
+                  <span>{contact.label}</span>
+                  <strong>{contact.value}</strong>
+                </a>
+              ) : (
+                <div key={contact.label} className="contact-chip contact-chip--static">
+                  <span>{contact.label}</span>
+                  <strong>{contact.value}</strong>
+                </div>
+              ),
+            )}
           </div>
         </div>
         <div className="hero-highlight">
           <div>
-            <span className="stat-value">3</span>
-            <span className="stat-label">active builds</span>
+            <span className="stat-value">Amazon</span>
+            <span className="stat-label">Junior Software Developer</span>
           </div>
           <div>
-            <span className="stat-value">92%</span>
-            <span className="stat-label">repeat partners</span>
+            <span className="stat-value">Cal Poly TA</span>
+            <span className="stat-label">CPE 333 & EE 215</span>
           </div>
-          <p>Currently collaborating with fintech, mobility, and health tech teams.</p>
+          <div>
+            <span className="stat-value">Templeton HS</span>
+            <span className="stat-label">Percussion And Visual Captionhead</span>
+          </div>
         </div>
       </header>
 

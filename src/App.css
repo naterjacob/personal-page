@@ -76,6 +76,48 @@ a {
   flex-wrap: wrap;
 }
 
+.contact-row {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-chip {
+  flex: 1 1 220px;
+  min-width: 200px;
+  background: var(--panel-muted);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-chip span {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-chip strong {
+  font-size: 1rem;
+}
+
+.contact-chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.contact-chip--static {
+  pointer-events: none;
+}
+
 .primary-link,
 .ghost-link,
 .secondary-button {
@@ -328,6 +370,22 @@ a {
   gap: 24px;
 }
 
+.education-callout {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(124, 91, 255, 0.08);
+  border: 1px dashed rgba(124, 91, 255, 0.35);
+}
+
+.education-callout p {
+  margin: 6px 0 0;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
 .skills-grid {
   display: grid;
   gap: 18px;
@@ -383,6 +441,14 @@ a {
 
   .hero-actions {
     flex-direction: column;
+  }
+
+  .contact-row {
+    flex-direction: column;
+  }
+
+  .contact-chip {
+    width: 100%;
   }
 
   .tabs {

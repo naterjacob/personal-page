@@ -1,8 +1,8 @@
 {
-  "name": "my-website",
+  "name": "personal-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://naterjacob.github.io/my-website",
+  "homepage": "https://naterjacob.github.io/personal-page/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -40,5 +40,4 @@
       "last 1 safari version"
     ]
   }
-  
 }
